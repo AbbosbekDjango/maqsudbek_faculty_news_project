@@ -1,0 +1,15 @@
+{% extends "news/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for n in news %}
+{% if n.image %}
+<img src="{{ n.image.url }}" alt="{{news.title }}">
+{% endif %}
+	<h1>{{ n.title }}</h1>
+	<p>{{ n.body }}</p>
+<a href="{% url 'news_list' %}" class="color3 bg-primary" >All news</a>
+{% endfor %}
+
+{% endblock content %}
